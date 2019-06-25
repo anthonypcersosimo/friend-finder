@@ -13,13 +13,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Basic route that sends the user text when they hit the home path
-app.get("/index.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "app/public/home.html"));
 });
 
 // Route that contains JSON data of all users who booked a reservation
-app.get("/api/tables.html", function(req, res) {
-
+app.get("/survey.html", function(req, res) {
+    res.sendFile(path.join(__dirname, "app/public/survey.html"));
 });
 
 // Matt do you wanna do the next .get below for the waitlist???

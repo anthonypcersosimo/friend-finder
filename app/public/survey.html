@@ -174,8 +174,8 @@
         e.preventDefault();
         
         console.log("I've been clicked!");
-        
-        // Create an object for the user"s data
+
+        // Create an object for the user's data
         var userData = {
             name: $("#name").val(),
             photo: $("#photo").val(),
@@ -192,6 +192,7 @@
                 $("#q10").val()
             ]
         };
+        console.log(JSON.stringify(userData));
     });
     </script>
 
