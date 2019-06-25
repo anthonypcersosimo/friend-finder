@@ -167,34 +167,35 @@
 
   </div>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
         
-        // Grab values from the form on pressing the sumbit button
-        $("#submit").on("click", function(e) {
-        e.preventDefault();
-        
-        console.log("I've been clicked!");
+    // Grab values from the form on pressing the sumbit button
+    $("#submit").on("click", function(e) {
+    e.preventDefault();
+    
+    console.log("I've been clicked!");
 
-        // Create an object for the user's data
-        var userData = {
-            name: $("#name").val(),
-            photo: $("#photo").val(),
-            scores: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val(),
-                $("#q4").val(),
-                $("#q5").val(),
-                $("#q6").val(),
-                $("#q7").val(),
-                $("#q8").val(),
-                $("#q9").val(),
-                $("#q10").val()
-            ]
-        };
-        console.log(JSON.stringify(userData));
-    });
-    </script>
+    // Create an object for the user's data
+    var userData = {
+      name: $("#name").val(),
+      photo: $("#photo").val(),
+      scores: [
+        $("#q1").val(),
+        $("#q2").val(),
+        $("#q3").val(),
+        $("#q4").val(),
+        $("#q5").val(),
+        $("#q6").val(),
+        $("#q7").val(),
+        $("#q8").val(),
+        $("#q9").val(),
+        $("#q10").val()
+      ]
+    };
+    
+    console.log(JSON.stringify(userData));
+  });
+  </script>
 
 </body>
 
