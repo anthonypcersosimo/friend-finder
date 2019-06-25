@@ -14,14 +14,14 @@ app.use(express.json());
 
 // Basic route that sends the user text when they hit the home path
 app.get("/", function(req, res) {
-    import { home } from './app/routing/htmlRoutes';
-    home();
+    var homeFunc = require('./app/routing/htmlRoutes');
+    homeFunc.home(res);
 });
 
 // Route that contains JSON data of all users who booked a reservation
 app.get("/survey.html", function(req, res) {
-    import { survey } from './app/routing/htmlRoutes';
-    survey();
+    var surveyFunc = require('./app/routing/htmlRoutes');
+    surveyFunc.survey(res);
 });
 
 // Matt do you wanna do the next .get below for the waitlist???
