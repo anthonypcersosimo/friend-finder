@@ -1,8 +1,8 @@
 // Require in dependencies
-var mysql = require("mysql");
-var express = require("express");
-var fs = require("fs");
-var path = require("path");
+const mysql = require("mysql");
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
 
 
 const app = express();
