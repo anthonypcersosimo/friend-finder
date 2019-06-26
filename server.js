@@ -33,14 +33,13 @@ app.get("/api/friends",function(req, res) {
     apiGetFunc.apiGet(res);
 });
 
-// Now we need a post request when someone submits the form that Pat is building
+// Posts data from HTML form into the Friends API
 app.post("/api/friends",function(req, res){
     apiPostFunc.apiPost(req, res);
 })
 
 
-// Starts the server to begin listening
-// =============================================================
+// Spin up server
 app.listen(PORT, function() {
     console.log("App listening at http://localhost/" + PORT);
 });
