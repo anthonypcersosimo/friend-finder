@@ -192,9 +192,12 @@
         $("#q10").val()
       ]
     };
-    
-    console.log(JSON.stringify(userData));
-  });
+
+    $.post("/api/friends", userData)
+      .then(function(data){
+        console.log(data);
+      });
+    });
   </script>
 
 </body>

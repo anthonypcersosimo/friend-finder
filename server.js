@@ -12,26 +12,30 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Basic route that sends the user text when they hit the home path
+// Route that sends the user the home page when they hit the home path
 app.get("/", function(req, res) {
     var homeFunc = require('./app/routing/htmlRoutes');
     homeFunc.home(res);
 });
 
-// Route that contains JSON data of all users who booked a reservation
+// Route that sends the user the survey page when they hit the survey path
 app.get("/survey.html", function(req, res) {
     var surveyFunc = require('./app/routing/htmlRoutes');
     surveyFunc.survey(res);
 });
 
-// Matt do you wanna do the next .get below for the waitlist???
-app.get("/api/reservation.html",function(req,res) {
-    
+// Firends API that takes in data from the survey and adds userData to the friends.js array
+app.get("/api/friends",function(req, res) {
+    var friendsFunc = require('./app/data/friends');
+    res.json(friendsFunc);
 });
 
 // Now we need a post request when someone submits the form that Pat is building
-app.post("/api/reservation",function(req, res){
-
+app.post("/api/friends",function(req, res){
+    var friendsFunc = require('./app/data/friends');
+    var newFriend = req.body;
+    friendsFunc.push(newFriend);
+    console.log(friendsFunc);
 })
 
 

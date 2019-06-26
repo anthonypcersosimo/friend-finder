@@ -1,4 +1,4 @@
-var loversArray = [
+var friendsArray = [
     {
     "name":"Bill Nye",
     "photo":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fewedit.files.wordpress.com%2F2015%2F01%2Fbill-nye-the-science-guy.jpg&w=400&c=sc&poi=face&q=85",
@@ -33,3 +33,5 @@ var loversArray = [
     }
       
 ];
+
+module.exports = (friendsArray);
