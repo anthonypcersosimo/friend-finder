@@ -12,30 +12,30 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Require in our Route Files
+var homeFunc = require('./app/routing/htmlRoutes');
+var surveyFunc = require('./app/routing/htmlRoutes');
+var apiGetFunc = require('./app/routing/apiRoutes');
+var apiPostFunc = require('./app/routing/apiRoutes');
+
 // Route that sends the user the home page when they hit the home path
 app.get("/", function(req, res) {
-    var homeFunc = require('./app/routing/htmlRoutes');
     homeFunc.home(res);
 });
 
 // Route that sends the user the survey page when they hit the survey path
 app.get("/survey.html", function(req, res) {
-    var surveyFunc = require('./app/routing/htmlRoutes');
     surveyFunc.survey(res);
 });
 
 // Firends API that takes in data from the survey and adds userData to the friends.js array
 app.get("/api/friends",function(req, res) {
-    var friendsFunc = require('./app/data/friends');
-    res.json(friendsFunc);
+    apiGetFunc.apiGet(res);
 });
 
 // Now we need a post request when someone submits the form that Pat is building
 app.post("/api/friends",function(req, res){
-    var friendsFunc = require('./app/data/friends');
-    var newFriend = req.body;
-    friendsFunc.push(newFriend);
-    console.log(friendsFunc);
+    apiPostFunc.apiPost(req, res);
 })
 
 
