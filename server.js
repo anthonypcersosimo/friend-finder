@@ -38,7 +38,6 @@ app.post("/api/friends",function(req, res){
     apiPostFunc.apiPost(req, res);
 })
 
-
 // Spin up server
 app.listen(PORT, function() {
     console.log("App listening at http://localhost/" + PORT);
